@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyeyeon Kim | Translation Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@300;400;700&family=Lato:wght@300;400;700&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --cream: #f8f4ef;
+    --dusty-rose: #c9897a;
+    --sage: #7a9e8e;
+    --gold: #c9a84c;
+    --light-sage: #eaf2ef;
+    --muted: #8a8a8a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    height: 60px;
+  }
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--cream);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+  }
+  nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  nav a {
+    color: rgba(248,244,239,0.7);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  /* HERO / COVER */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    background: var(--ink);
+    clip-path: polygon(0 0, 0 100%, 50% 100%, 100% 50%, 50% 0);
+    z-index: 2;
+  }
+  .hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--dusty-rose);
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+    color: rgba(248,244,239,0.6);
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+  }
+  .hero-lang-badge {
+    display: inline-flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  .badge {
+    padding: 0.3rem 0.9rem;
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+
+  .hero-right {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 5rem 5rem 6rem;
+  }
+  .hero-name-ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+  }
+  .intro-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    line-height: 2;
+    color: #3a3a3a;
+    margin-bottom: 1.5rem;
+  }
+  .intro-ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.9rem;
+    line-height: 2;
+    color: #5a5a5a;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--sage);
+  }
+
+  /* OVERVIEW */
+  .section {
+    padding: 5rem 8%;
+  }
+  .section.alt { background: var(--light-sage); }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--ink);
+    margin-bottom: 3rem;
+  }
+  .divider {
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin: 1rem 0 3rem;
+  }
+
+  /* OVERVIEW GRID */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .overview-card {
+    background: white;
+    border-radius: 4px;
+    padding: 2rem;
+    border-top: 3px solid var(--dusty-rose);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .overview-card.sage-top { border-top-color: var(--sage); }
+  .overview-card.gold-top { border-top-color: var(--gold); }
+  .card-num {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--dusty-rose);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .overview-card.sage-top .card-num { color: var(--sage); }
+  .overview-card.gold-top .card-num { color: var(--gold); }
+  .card-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* WORKSHOP TABLE */
+  .workshop-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .workshop-table th {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.9rem 1.2rem;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+  }
+  .workshop-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .workshop-table tr:hover td { background: var(--light-sage); }
+  .workshop-table tbody tr { transition: background 0.15s; }
+  .workshop-table tbody tr:hover td:first-child { border-left: 3px solid var(--sage); }
+  .workshop-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--dusty-rose);
+    font-weight: 400;
+  }
+  .genre-tag {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    background: var(--light-sage);
+    border-radius: 3px;
+    font-size: 0.73rem;
+    color: var(--sage);
+    letter-spacing: 0.05em;
+    margin-top: 0.3rem;
+  }
+
+  /* TRANSLATION SAMPLE */
+  .translation-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .trans-header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.8rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .trans-header.tl { background: var(--sage); }
+  .trans-col {
+    background: white;
+    padding: 1.5rem 2rem;
+  }
+  .trans-col.tl { background: #f0f6f3; }
+  .trans-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-bottom: 2px;
+  }
+  .st-line, .tt-line {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .st-line { background: rgba(255,255,255,0.8); font-family: 'Noto Serif KR', serif; }
+  .tt-line { background: rgba(234,242,239,0.8); font-style: italic; }
+
+  .poem-block {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+  }
+  .poem-header {
+    background: var(--ink);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .poem-header .title-ko {
+    font-family: 'Noto Serif KR', serif;
+    color: var(--cream);
+    font-size: 1.1rem;
+  }
+  .poem-header .title-en {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-style: italic;
+    font-size: 1rem;
+  }
+  .poem-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .poem-col {
+    padding: 2rem;
+  }
+  .poem-col:first-child { border-right: 1px solid #eee; }
+  .poem-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .poem-stanza {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+  .poem-stanza p { margin: 0; }
+  .poem-col:first-child .poem-stanza { font-family: 'Noto Serif KR', serif; }
+  .poem-col:last-child .poem-stanza { font-style: normal; color: #2a2a2a; }
+
+  /* CASE STUDY */
+  .case-study-intro {
+    background: var(--ink);
+    border-radius: 6px;
+    padding: 3rem;
+    color: var(--cream);
+    margin-bottom: 2.5rem;
+  }
+  .case-study-intro h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .case-study-intro .artist { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; }
+  .case-study-intro p { margin-top: 1.5rem; font-size: 0.88rem; line-height: 1.9; color: rgba(248,244,239,0.8); }
+
+  .critique-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .critique-card {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  .critique-card-header {
+    padding: 0.7rem 1.2rem;
+    background: var(--dusty-rose);
+    color: white;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .critique-card-body { padding: 1.2rem; }
+  .line-pair {
+    margin-bottom: 1rem;
+  }
+  .line-ko { font-family: 'Noto Serif KR', serif; font-size: 0.85rem; color: var(--ink); }
+  .line-en { font-size: 0.85rem; font-style: italic; color: #4a4a4a; }
+  .line-revised { font-size: 0.85rem; font-style: italic; color: var(--sage); font-weight: 700; }
+  .strategy-tag {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    background: var(--light-sage);
+    color: var(--sage);
+    font-size: 0.72rem;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+  }
+
+  /* REFLECTION */
+  .reflection-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .reflection-panel {
+    background: white;
+    border-radius: 6px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    border-top: 3px solid var(--sage);
+  }
+  .reflection-panel.ko { border-top-color: var(--sage); }
+  .reflection-panel .lang-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .reflection-panel.ko .lang-label { color: var(--dusty-rose); }
+  .reflection-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+  .reflection-panel.ko h3 {
+    font-family: 'Noto Serif KR', serif;
+  }
+  .reflection-panel p {
+    font-size: 0.88rem;
+    line-height: 2;
+    color: #3a3a3a;
+    margin-bottom: 1rem;
+  }
+  .reflection-panel.ko p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.86rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(248,244,239,0.5);
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+  footer span { color: var(--gold); }
+
+  /* SCROLL ANCHORS */
+  section[id] { scroll-margin-top: 60px; }
+
+  /* GOOGLE SITE NOTE */
+  .gs-note {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+    color: #856404;
+    margin-bottom: 2rem;
+  }
+  .gs-note strong { display: block; margin-bottom: 0.3rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Hyeyeon Kim · Final Translation Portfolio</div>
+  <ul>
+    <li><a href="#cover">Cover</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#reflection">Reflection</a></li>
+    <li><a href="#workshops">Workshops</a></li>
+    <li><a href="#case-study">Case Study</a></li>
+  </ul>
+</nav>
+
+<!-- ─────────────── COVER ─────────────── -->
+<section id="cover">
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-tag">KORE 440-001 · Spring 2026 · Dr. Jihye Moon</p>
+      <h1 class="hero-title">Final<br><em>Translation</em><br>Portfolio</h1>
+      <p class="hero-subtitle">Korean Literary Translation: Lyrics and Poetry</p>
+      <div class="hero-lang-badge">
+        <span class="badge">한국어</span>
+        <span class="badge">English</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <p class="hero-name-ko">김혜연 · Hyeyeon Kim</p>
+
+      <p class="intro-text">
+        저는 김혜연이며 George Mason University에서 데이터 사이언스를 전공하는 학부생입니다. KORE 440 수업을 통해 민요, 시조, 현대시, 대중가요 등 다양한 한국어 텍스트를 영어로 번역하는 경험을 쌓았습니다. 이 포트폴리오에는 한 학기 동안 완성한 12편의 번역 워크숍 최종 번역본과 노래 가사 번역 케이스 스터디가 담겨 있으며, 원문에 대한 충실성과 번역문의 자연스러움 사이의 균형을 찾아가는 과정이 기록되어 있습니다.
+      </p>
+      <p class="intro-ko">
+        My name is Hyeyeon Kim (김혜연), and I am majoring in Computational and Data Science (CDS) at George Mason University. Through KORE 440, I have worked closely with Korean lyrics and poetry  — folk songs, sijo, modern poems, and ballads — and translated them into English. This portfolio collects 12 Translation Workshops and a Song Lyrics Translation Case Study, each reflecting a semester of growth in navigating the tension between fidelity and fluency, between the Source Text (ST) and the Target Text (TT).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── OVERVIEW ─────────────── -->
+<section id="overview" class="section">
+  <p class="section-label">Portfolio Contents</p>
+  <h2 class="section-title">포트폴리오 개요 · Overview</h2>
+  <div class="divider"></div>
+
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="card-num">01</div>
+      <div class="card-title">Reflection on Literary Translation</div>
+      <div class="card-desc">A personal essay reflecting on key translation strategies — equivalence, modulation, transposition, calque — developed through the semester's work with Korean literary and musical texts.</div>
+    </div>
+    <div class="overview-card sage-top">
+      <div class="card-num">02</div>
+      <div class="card-title">12 Translation Workshops</div>
+      <div class="card-desc">Final revised translations of all 12 workshop texts including folk songs (민요), children's songs (동요), sijo (시조), classical poetry, and contemporary pop lyrics.</div>
+    </div>
+    <div class="overview-card gold-top">
+      <div class="card-num">03</div>
+      <div class="card-title">Song Lyrics Translation Case Study</div>
+      <div class="card-desc">An in-depth critique of an existing English translation of 태연's "11:11," analyzing translation strategies verse-by-verse and proposing improvements where the TT departs from the ST's tone.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── REFLECTION ─────────────── -->
+<section id="reflection" class="section alt">
+  <p class="section-label">Section 1</p>
+  <h2 class="section-title">Reflection on Literary Translation</h2>
+  <div class="divider"></div>
+
+  <div class="reflection-panel ko" style="width:100%;">
+    <h3>문학 번역을 통해 배운 것</h3>
+    <p>이번 학기 KORE 440 수업을 듣기 전까지, 저는 번역이란 그저 한 언어를 다른 언어로 바꾸는 단순한 작업이라고 생각했습니다. 하지만 12번의 Workshop과 Case Study를 거치며, 저는 번역이 단순한 기술이 아니라 한 사람의 마음과 문화를 옮기는 아주 정교한 작업이라는 것을 깨달았습니다.</p>
+    <p>가장 기억에 남는 Workshop은 시조와 민요를 다룰 때였습니다. '백로가'나 '군밤 타령' 같은 텍스트를 영어로 옮길 때, 어떻게 번역해야 할지 가장 고민되었습니다. 한국어 특유의 흥을 돋구는 추임새나 '충신'의 의미, 그리고 그 시대의 정서를 영어 단어 하나로 표현하기에는 어려웠기 때문입니다. 이를 통해 좋은 번역은 단순히 의미만 전달하는 것이 아니라 원문이 가진 리듬과 그 속에 숨겨진 의도까지 고민해야 한다는 것을 배웠습니다.</p>
+    <p>Case Study는 좋은 노래 번역에 대해 생각해 보고 체험해 볼 수 있었던 과제였습니다.</p>
+    <p>이 수업을 마치며, 저는 한국 문학 언어에 대한 더 깊은 경의심과 번역가로서 저 자신의 한계에 대한 보다 솔직한 이해를 갖게 되었습니다. 모든 번역은 겸손의 행위입니다. 무언가는 항상 남겨진다는 인정이자, 가능한 한 적게 남기겠다는 다짐입니다.</p>
+  </div>
+</section>
+
+<!-- ─────────────── WORKSHOPS ─────────────── -->
+<section id="workshops" class="section">
+  <p class="section-label">Section 2</p>
+  <h2 class="section-title">Translation Workshop</h2>
+  <div class="divider"></div>
+
+  <!-- Index Table -->
+  <table class="workshop-table" style="margin-bottom: 3.5rem;">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ST Title (Korean)</th>
+        <th>Author</th>
+        <th>TT Title (English)</th>
+        <th>Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr onclick="location.href='#workshop-1'" style="cursor:pointer;"><td><span class="workshop-num">1</span></td><td>군밤 타령</td><td>미상 (구전민요)</td><td>The Song of Chestnuts</td><td><span class="genre-tag">신민요 / Folk Song</span></td></tr>
+      <tr onclick="location.href='#workshop-2'" style="cursor:pointer;"><td><span class="workshop-num">2</span></td><td>풀따기</td><td>김소월</td><td>Plucking Grass</td><td><span class="genre-tag">현대시 / Modern Poetry</span></td></tr>
+      <tr onclick="location.href='#workshop-3'" style="cursor:pointer;"><td><span class="workshop-num">3</span></td><td>물이 되는 꿈</td><td>루시드 폴</td><td>Water, a Dream to Be</td><td><span class="genre-tag">인디 음악/ Indie Music</span></td></tr>
+      <tr onclick="location.href='#workshop-4'" style="cursor:pointer;"><td><span class="workshop-num">4</span></td><td>반달</td><td>윤극영</td><td>Half Moon</td><td><span class="genre-tag">동요 / Children's Song</span></td></tr>
+      <tr onclick="location.href='#workshop-5'" style="cursor:pointer;"><td><span class="workshop-num">5</span></td><td>백로가</td><td>영천 이씨</td><td>White Heron</td><td><span class="genre-tag">시조 / Sijo</span></td></tr>
+      <tr onclick="location.href='#workshop-6'" style="cursor:pointer;"><td><span class="workshop-num">6</span></td><td>고양이</td><td>김혜연 (original)</td><td>A Cat</td><td><span class="genre-tag">창작 시조 / Original Sijo</span></td></tr>
+      <tr onclick="location.href='#workshop-7'" style="cursor:pointer;"><td><span class="workshop-num">7</span></td><td>비</td><td>반석</td><td>Rain</td><td><span class="genre-tag">현대시 / Modern Poetry</span></td></tr>
+      <tr onclick="location.href='#workshop-8'" style="cursor:pointer;"><td><span class="workshop-num">8</span></td><td>빛을 찾아가는 길</td><td>조지훈</td><td>The Path Toward Light</td><td><span class="genre-tag">현대시 / Modern Poetry</span></td></tr>
+      <tr onclick="location.href='#workshop-9'" style="cursor:pointer;"><td><span class="workshop-num">9</span></td><td>시시콜콜한 이야기</td><td>이소라</td><td>A Trivial Story</td><td><span class="genre-tag">가요, 발라드 / Ballad Music</span></td></tr>
+      <tr onclick="location.href='#workshop-10'" style="cursor:pointer;"><td><span class="workshop-num">10</span></td><td>능금</td><td>김춘수</td><td>The Apple</td><td><span class="genre-tag">현대시 / Modern Poetry</span></td></tr>
+      <tr onclick="location.href='#workshop-11'" style="cursor:pointer;"><td><span class="workshop-num">11</span></td><td>아침 이슬</td><td>김민기</td><td>Morning Dew</td><td><span class="genre-tag">민중가요 / Protest Song</span></td></tr>
+      <tr onclick="location.href='#workshop-12'" style="cursor:pointer;"><td><span class="workshop-num">12</span></td><td>북</td><td>김영랑</td><td>The Drum</td><td><span class="genre-tag">현대시 / Modern Poetry</span></td></tr>
+    </tbody>
+  </table>
+
+ <!-- Workshop 1 -->
+  <h3 id="workshop-1" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem;">
+    Workshop 1: Korean Folk Song<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">군밤 타령 / The Song of Chestnuts · 작자 미상 (구전민요)</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza">
+          <p>1절: 바람이 분다 바람이 불어 연평 바다에 어허어얼싸 돈바람 분다</p>
+          <p style="font-style:normal; color:var(--sage)">후렴: 얼싸 좋네 아 좋네 군밤이요 에헤라 생률 밤이로구나</p>
+        </div>
+        <div class="poem-stanza">
+          <p>5절: 봄이 왔네 봄이 왔어 금수강산에 어허어얼싸 새봄이 왔네</p>
+        </div>
+        <div class="poem-stanza">
+          <p>8절: 나는 총각 너는 처녀 처녀와 총각이 잘 놀아난다 잘 놀아나요</p>
+        </div>
+        <div class="poem-stanza">
+          <p>9절: 나는 올빼미 너는 뻐꾸기 올빼미와 뻐꾸기 잘 놀아난다 잘 놀아나요</p>
+        </div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza">
+          <p>Verse 1: Wind blows, wind is blowing, across the Yellow Sea, oh-ho wind of riches blows</p>
+          <p style="color:var(--sage)">Chorus: Hooray great! Ah great! Roasted chestnuts! <em>Ehera!</em> It's fresh chestnuts!</p>
+        </div>
+        <div class="poem-stanza">
+          <p>Verse 5: Spring's coming, spring is here, across this lovely land, oh-ho the hope is coming</p>
+        </div>
+        <div class="poem-stanza">
+          <p>Verse 8: I am a bachelor, you are a maiden, oh-ho we hang out well, hang out very well</p>
+        </div>
+        <div class="poem-stanza">
+          <p>Verse 9: I am an owl, you are a cuckoo, oh-ho we hang out well, hang out very well</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 2 -->
+  <h3 id="workshop-2" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem;">
+    Workshop 2: Korean Sung Poetry<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">풀따기 / Plucking Grass · 김소월</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza"><p>우리 집 뒷산에는 풀이 푸르고<br>숲 사이의 시냇물, 모래 바닥은<br>파아란 풀 그림자, 떠서 흘러요.</p></div>
+        <div class="poem-stanza"><p>그리운 우리 님은 어디 계신고.<br>날마다 피어나는 우리 님 생각.<br>날마다 뒷산에 홀로 앉아서<br>날마다 풀을 따서 물에 던져요.</p></div>
+        <div class="poem-stanza"><p>흘러가는 시내의 물에 흘러서<br>내어던진 풀잎은 옅게 떠갈 제<br>물살이 해적해적 품을 헤쳐요.</p></div>
+        <div class="poem-stanza"><p>그리운 우리 님은 어디 계신고.<br>가엾은 이 내 속을 둘 곳 없어서<br>날마다 풀을 따서 물에 던지고<br>흘러가는 잎이나 맘해 보아요.</p></div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza"><p>On the hill behind my house, grass is green<br>Along the stream between the woods, a sandy riverbed<br>Clear shadows of green grass, float and flow.</p></div>
+        <div class="poem-stanza"><p>My dear, my love, where are you?<br>Every day, my thoughts of you are blooming.<br>Every day, I sit alone on the hill<br>Every day, I pluck grass and throw it in the water.</p></div>
+        <div class="poem-stanza"><p>Flowing along the stream of water<br>When the tossed grass leaves drift lightly away<br>Rippling currents stir and part the water's fold.</p></div>
+        <div class="poem-stanza"><p>My dear, my love, where are you?<br>With nowhere to rest my sorrowful heart<br>Every day, I pluck grass and throw it in the water<br>I entrust my heart to those floating leaves.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 3 -->
+  <h3 id="workshop-3" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 3: Imagery in Song Lyrics<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">물이 되는 꿈 / Water, a Dream to Be · 루시드 폴</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza"><p>물<br>물이 되는 꿈<br>물이 되는 꿈<br>물이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>꽃<br>꽃이 되는 꿈<br>씨가 되는 꿈<br>풀이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>강<br>강이 되는 꿈<br>빛이 되는 꿈<br>소금이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>바다<br>바다가 되는 꿈<br>파도가 되는 꿈<br>물이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>별<br>별이 되는 꿈<br>달이 되는 꿈<br>새가 되는 꿈</p></div>
+        <div class="poem-stanza"><p>비<br>비가 되는 꿈<br>돌이 되는 꿈<br>흙이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>산<br>산이 되는 꿈<br>내가 되는 꿈<br>바람이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>다시 바다<br>바다가 되는 꿈<br>모래가 되는 꿈<br>물이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>물<br>빗물이 되는 꿈<br>냇물이 되는 꿈<br>강물이 되는 꿈</p></div>
+        <div class="poem-stanza"><p>또 다시 바다<br>바다가 되는 꿈<br>하늘이 되는 꿈<br>물이 되는 꿈</p></div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza"><p>Water<br>Water, a dream to be<br>To be water<br>To be water</p></div>
+        <div class="poem-stanza"><p>Flower<br>Flower, a dream to be<br>To be a seed<br>To be grass</p></div>
+        <div class="poem-stanza"><p>River<br>River, a dream to be<br>To be light<br>To be salt</p></div>
+        <div class="poem-stanza"><p>Sea<br>Sea, a dream to be<br>To be a wave<br>To be water</p></div>
+        <div class="poem-stanza"><p>Star<br>Star, a dream to be<br>To be the moon<br>To be a bird</p></div>
+        <div class="poem-stanza"><p>Rain<br>Rain, a dream to be<br>To be a stone<br>To be soil</p></div>
+        <div class="poem-stanza"><p>Mountain<br>Mountain, a dream to be<br>To be a brook<br>To be wind</p></div>
+        <div class="poem-stanza"><p>The sea again<br>Sea, a dream to be<br>To be sand<br>To be water</p></div>
+        <div class="poem-stanza"><p>Water<br>Rain, a dream to be<br>To be a stream<br>To be the river</p></div>
+        <div class="poem-stanza"><p>The sea once again<br>Sea, a dream to be<br>To be sky<br>To be water</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 4 -->
+  <h3 id="workshop-4" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 4: Singable Translation<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">반달 / Half Moon · 윤극영</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza">
+          <p>푸른 하늘 은하수 하얀 쪽배엔<br>계수나무 한 나무 토끼 한 마리<br>돛대도 아니 달고 삿대도 없이<br>가기도 잘도 간다 서쪽 나라로</p>
+        </div>
+        <div class="poem-stanza">
+          <p>은하수를 건너서 구름 나라로<br>구름 나라 지나선 어디로 가나<br>멀리서 반짝반짝 비치이는 건<br>샛별이 등대란다 길을 찾아라</p>
+        </div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza">
+          <p>The clear blue sky, the Milky Way in a white little boat<br>A cinnamon tree standing there one small rabbit sits<br>With no mast to hold a sail with no pole to push<br>Going well on its way to the hopeful land</p>
+        </div>
+        <div class="poem-stanza">
+          <p>Across the Milky Way it sail to the cloud land<br>Passing through the cloud land where does it go?<br>Twinkle-twinkle from afar shining bright and clear<br>Morning star is a lighthouse showing us the way</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 5 -->
+  <h3 id="workshop-5" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 5: Korean Traditional Poetry<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">백로가 / White Heron · 영천 이씨</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza">
+          <p>까마귀 싸우는 골짜기에 백로야 가지 마라</p>
+          <p>성낸 까마귀 흰 빛을 새오나니</p>
+          <p>청강(淸江)에 조히 씻은 몸 더럽힐까 하노라</p>
+        </div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza">
+          <p>Do not go there, white heron, to the valley where crows fight.</p>
+          <p>The furious crows surely envy your snowy white feathers.</p>
+          <p>Your pure body washed in a clear river, I dread it will be defiled.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 6 -->
+  <h3 id="workshop-6" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 6: Sijo Composition<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">고양이 / A Cat · 김혜연</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza">
+          <p>화창한 골목 가에 고양이가 앉아 있다</p>
+          <p>반가워 내게 오자 뒤돌아 도망간 나</p>
+          <p>아쉽다 알레르기라 멀리서만 보겠다</p>
+        </div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza">
+          <p>On the sunny street, a little cat sits peacefully</p>
+          <p>It greets and comes to me, but I turn and run away</p>
+          <p>Oh my bad allergy, I must watch only from afar</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 7 -->
+  <h3 id="workshop-7" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 7: Korean Street Poetry<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">비 / Rain · 반석</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza"><p>한발치 사이로 나란히 걷던 남녀</p></div>
+        <div class="poem-stanza"><p>비가 온다</p></div>
+        <div class="poem-stanza"><p>하나의 우산 속으로 더 가까워지거나<br>각자의 우산 속으로 더 멀어지거나</p></div>
+        <div class="poem-stanza"><p>비가 그쳤다</p></div>
+        <div class="poem-stanza"><p>하늘을 바라보니 더 선명하다<br>서로를 바라보니 더 선명하다</p></div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza"><p>A couple walking side by side, a step apart</p></div>
+        <div class="poem-stanza"><p>Rain starts to fall</p></div>
+        <div class="poem-stanza"><p>They come closer under a single umbrella,<br>Or move farther apart under their own</p></div>
+        <div class="poem-stanza"><p>The rain stops</p></div>
+        <div class="poem-stanza"><p>Watching the sky, it is clearer<br>Looking at each other, it is clearer</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 8 -->
+  <h3 id="workshop-8" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 8: Modern Korean Poetry<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">빛을 찾아가는 길 / The Path Toward Light · 조지훈</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza"><p>사슴이랑 이리 함께 산길을 가며<br>바위 틈에 어리우는 물을 마시면</p></div>
+        <div class="poem-stanza"><p>살아 있는 즐거움의 저 언덕에서<br>아련히 풀피리도 들려오누나.</p></div>
+        <div class="poem-stanza"><p>해바라기 닮아가는 내 눈동자는<br>자운(紫雲)이 피어나는 청동(靑銅)의 향로(香爐)</p></div>
+        <div class="poem-stanza"><p>동해 동녘 바다에 해 떠오는 아침에<br>북받치는 설움을 하소하리라.</p></div>
+        <div class="poem-stanza"><p>돌뿌리 가시밭에 다친 발길이<br>아물어 꽃잎에 스치는 날은</p></div>
+        <div class="poem-stanza"><p>푸나무에 열리는 과일을 따며<br>춤과 노래도 가꾸어 보자.</p></div>
+        <div class="poem-stanza"><p>빛을 찾아가는 길의 나의 노래는<br>슬픈 구름 걷어가는 바람이 되라.</p></div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza"><p>As I walk a mountain path alone with deer,<br>Drinking water pooled in the crevices of rocks,</p></div>
+        <div class="poem-stanza"><p>From that distant hill where the joy of living dwells,<br>The faint sound of a grass flute drifts to my ears.</p></div>
+        <div class="poem-stanza"><p>My pupils, growing to resemble sunflowers,<br>Are bronze incense burners blooming purple clouds.</p></div>
+        <div class="poem-stanza"><p>To the morning sun rising from the Eastern Sea,<br>I shall pour out my surging sorrow.</p></div>
+        <div class="poem-stanza"><p>Should our feet, wounded by stone roots and thorny fields,<br>Heal and graze against flower petals,</p></div>
+        <div class="poem-stanza"><p>Let us pick the fruit ripening on green trees,<br>And cultivate our dance and song.</p></div>
+        <div class="poem-stanza"><p>My song on the path toward light<br>Shall become winds that sweep away the sorrowful clouds.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 9 -->
+  <h3 id="workshop-9" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 9: Korean Ballad Music<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">시시콜콜한 이야기 / A Trivial Story · 이소라, 조규찬</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza"><p>잠깐 일어나봐 깨워서 미안해</p></div>
+        <div class="poem-stanza"><p>나도 모르겠어 윤오의 진짜 마음을</p></div>
+        <div class="poem-stanza"><p>같이 걸을때도 (거기 어디니) 한걸음 먼저 가<br>친구들 앞에서 (혼자 있니)<br>무관심할 때도 괴로워 (어디 가지 말고 거기 있어 내가 갈게)</p></div>
+        <div class="poem-stanza"><p>많이 힘들어 (지금 우는 거니)<br>요즘 자주 울어 (너 땜에 속상해)</p></div>
+        <div class="poem-stanza"><p>헤어지긴 싫어 (그렇게 안 되니)<br>내가 좋아하는 거 알잖아 더 잘해 달라면 그럴 거야</p></div>
+        <div class="poem-stanza"><p>나도 너무 싫어 (매일 이러는 거)<br>걜 만나고부터 못 견디게 외로워 (못 견딜게 세상에 어딨니 울어도 달라진 건 없어)</p></div>
+        <div class="poem-stanza"><p>저울이 기울어 (조금만 기다려 응?)<br>나만 사랑하는 거 같잖아<br>또 전화도 없고 또 날 울려</p></div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza"><p>Wake up for a second. Sorry for waking you.</p></div>
+        <div class="poem-stanza"><p>I really don't know myself, how Yuno really feels..</p></div>
+        <div class="poem-stanza"><p>Even when we walk together (Where are you?) he's always a step ahead.<br>When we're with friends, (Are you alone?)<br>It hurts when he's indifferent to me. (Stay right there, don't go anywhere. I'm coming to you.)</p></div>
+        <div class="poem-stanza"><p>It's so painful. (Are you crying right now?)<br>I cry a lot lately. (It breaks my heart to see you like this.)</p></div>
+        <div class="poem-stanza"><p>I don't want to break up. (Is that so hard?)<br>You know how much I love him. If he asks me to do more, I will.</p></div>
+        <div class="poem-stanza"><p>I'm so sick of it (Doing this every day.)<br>Ever since I met him, I've been unbearably lonely. (Nothing in this world is unbearable. Crying won't change a thing.)</p></div>
+        <div class="poem-stanza"><p>The scale is tipping. (Just wait a bit, okay?)<br>It feels like I'm the only one in love.<br>Still no call from him, and he makes me cry again.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 10 -->
+  <h3 id="workshop-10" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 10: Modern Korean Poetry<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">능금 / The Apple · 김춘수</span>
+    <p style="color:var(--muted); font-size:0.82rem; letter-spacing:0.08em; margin-bottom:1.5rem;">I used Google Gemini and NAVER Papago for this translation workshop.</p>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza">
+          <p>그는 그리움에 산다.<br>그리움은 익어서<br>스스로도 견디기 어려운<br>빛깔이 되고 향기가 된다.<br>그리움은 마침내<br>스스로의 무게로<br>떨어져 온다.<br>떨어져 와서 우리들 손바닥에<br>눈부신 축제의<br>비할 바 없이 그윽한<br>여운을 새긴다.</p>
+        </div>
+        <div class="poem-stanza">
+          <p>이미 가 버린 그날과<br>아직 오지 않은 그날에 머문<br>이 아쉬운 자리에는<br>시시각각의 그의 충실(充實)만이<br>익어 간다.<br>보라,<br>높고 맑은 곳에서<br>가을이 그에게<br>한결같은 애무(愛撫)의 눈짓을 보낸다.</p>
+        </div>
+        <div class="poem-stanza">
+          <p>놓칠 듯 놓칠 듯 숨 가쁘게<br>그의 꽃다운 미소를 따라가면은<br>세월도 알 수 없는 거기<br>푸르게만 고인<br>깊고 넓은 감정의 바다가 있다.<br>우리들 두 눈에<br>그득히 물결치는<br>시작도 끝도 없는<br>바다가 있다.</p>
+        </div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza">
+          <p>He lives in longing.<br>Longing ripens,<br>Becoming a color and a scent<br>Hard to bear on one's own.<br>Longing finally,<br>By its own weight,<br>Falls down.<br>Landing to carve into our palms,<br>The peerless,<br>Profound afterglow of<br>A dazzling festival.</p>
+        </div>
+        <div class="poem-stanza">
+          <p>Between the day that has already gone<br>And the day that has yet to come,<br>In this lingering threshold,<br>Only the fullness of his every passing moment continues<br>To ripen.<br>Look,<br>From a high and clear place,<br>Autumn sends him<br>A glance of constant caress.</p>
+        </div>
+        <div class="poem-stanza">
+          <p>Breathlessly, as if about to miss it,<br>If one follows his youthful smile,<br>There, where even time cannot know,<br>A deep and wide sea of emotion,<br>Pooled in its clean, blue stillness.<br>In our eyes,<br>There is a sea<br>With no beginning or end,<br>Surging in its boundless depth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 11 -->
+  <h3 id="workshop-11" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 11: Korean Protest Song<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">아침 이슬 / Morning Dew · 김민기</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza">
+          <p>긴 밤 지새우고 풀잎마다 맺힌<br>진주보다 더 고운 아침 이슬처럼<br>내 맘에 설움이 알알이 맺힐 때<br>아침 동산에 올라 작은 미소를 배운다</p>
+        </div>
+        <div class="poem-stanza">
+          <p>태양은 묘지 위에 붉게 떠오르고<br>한낮에 찌는 더위는 나의 시련일지라<br>나 이제 가노라 저 거친 광야에<br>서러움 모두 버리고 나 이제 가노라</p>
+        </div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza">
+          <p>After staying up all night, on every blade of grass,<br>Like forming Morning dew, finer than pearls<br>When sorrows bead up in my heart<br>I climb the hill and learn a little smile.</p>
+        </div>
+        <div class="poem-stanza">
+          <p>As the sun rises red over the graveyard,<br>The burning midday heat shall be my trial.<br>I move forward now into that rough wilderness.<br>Leaving all my sorrows behind, I move forward now.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workshop 12 -->
+  <h3 id="workshop-12" style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; margin-top:3rem;">
+    Workshop 12: Korean Poetry in Classical Music<br>
+    <span style="font-size:1.1rem; color:#3a3a3a;">북 / The Drum · 김영랑</span>
+  </h3>
+  <div class="poem-block">
+    <div class="poem-body">
+      <div class="poem-col">
+        <h4>한국어 원문 (ST)</h4>
+        <div class="poem-stanza"><p>자네 소리 하게 내 북을 잡지</p></div>
+        <div class="poem-stanza"><p>진양조 중머리 중중머리<br>엇머리 자진머리 휘몰아 보아</p></div>
+        <div class="poem-stanza"><p>이렇게 숨결이 꼭 맞아서만 이룬 일이란<br>인생(人生)에 흔치 않어 어려운 일 시원한 일</p></div>
+        <div class="poem-stanza"><p>소리를 떠나서야 북은 오직 가죽일 뿐<br>헛 때리면 만갑(萬甲)이도 숨을 고쳐 쉴밖에</p></div>
+        <div class="poem-stanza"><p>북은 오히려 컨닥타--요</p></div>
+        <div class="poem-stanza"><p>떡 궁! 동중정(動中靜)이오 소란 속에 고요 있어<br>인생(人生)이 가을같이 익어가오</p></div>
+        <div class="poem-stanza"><p>자네 소리 하게 내 북을 치지</p></div>
+      </div>
+      <div class="poem-col">
+        <h4>영어 번역 (TT)</h4>
+        <div class="poem-stanza"><p>You raise your voice in song, and I shall hold the drum</p></div>
+        <div class="poem-stanza"><p>Jinyangjo, Jungmori, Jungjungmori<br>Eotmori, Jajinmori, sweeping into Hwimori</p></div>
+        <div class="poem-stanza"><p>Achieved something only when breaths match so perfectly<br>A rare event in life, a feat both arduous and sublime.</p></div>
+        <div class="poem-stanza"><p>Apart from the song, the drum is merely leather<br>Struck in vain, even a master would catch his breath</p></div>
+        <div class="poem-stanza"><p>The drum is, rather, the Conductor</p></div>
+        <div class="poem-stanza"><p>Tteok-gung! Stillness in motion, silence within the clamor<br>As life ripens like the deepening autumn</p></div>
+        <div class="poem-stanza"><p>You raise your voice in song, and I shall strike the drum</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── CASE STUDY ─────────────── -->
+<section id="case-study" class="section alt">
+  <p class="section-label">Section 3</p>
+  <h2 class="section-title">Song Lyrics Case Study</h2>
+  <div class="divider"></div>
+
+  <div class="case-study-intro">
+    <p class="artist">태연 (TAEYEON) · SM Entertainment · 2016</p>
+    <h3>11:11</h3>
+    <p>
+      This case study examines an existing English translation of 태연's ballad "11:11" (lyrics by 김이나), translated by user "biojaeson" on Genius. The analysis applies translation theory — equivalence, modulation, transposition, and calque — to evaluate the strengths and weaknesses of the target text, and proposes improvements where the translation departs from the ST's quiet, resigned emotional register.
+    </p>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; margin-bottom:1.5rem;">TT Critique by Section</h3>
+
+  <div class="critique-grid">
+    <div class="critique-card">
+      <div class="critique-card-header">Verse 1</div>
+      <div class="critique-card-body">
+        <div class="line-pair">
+          <div class="line-ko">오늘이 한 칸이 채 안 남은 그런 시간</div>
+          <div class="line-en">TT: "When there's not much time left to the day"</div>
+          <div class="line-revised">✦ Revised: "When the last square of today is almost gone"</div>
+          <span class="strategy-tag">Modulation — preserves the calendar metaphor</span>
+        </div>
+        <div class="line-pair">
+          <div class="line-ko">별 게 다 널 떠오르게 하지</div>
+          <div class="line-en">TT: "Everything reminds me of you"</div>
+          <div class="line-revised">✦ Revised: "The trivial things bring you back to me"</div>
+          <span class="strategy-tag">Equivalence — restores the "trivial" nuance of 별 게</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="critique-card">
+      <div class="critique-card-header">Verse 2</div>
+      <div class="critique-card-body">
+        <div class="line-pair">
+          <div class="line-ko">지나고 나면 별 거 아니겠지 뭐</div>
+          <div class="line-en">TT: "It won't be a big deal"</div>
+          <div class="line-revised">✦ Revised: "It'll be as if nothing happened"</div>
+          <span class="strategy-tag">Register — "big deal" clashes with ST's soft, resigned tone</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="critique-card">
+      <div class="critique-card-header">Verse 3: Bridge</div>
+      <div class="critique-card-body">
+        <div class="line-pair">
+          <div class="line-ko">계절 틈에 잠시 피는 낯선 꽃처럼<br>하루 틈에 걸려 있는 새벽 별처럼<br>이 모든 건 언젠가는 다 지나가고 말겠지</div>
+          <div class="line-en">TT (3 lines): omits one line, reducing singability</div>
+          <div class="line-revised">✦ Revised (4 lines): "Like a strange flower blooming between seasons / Like the morning star hanging between the days / All of this, someday / Will all eventually pass away"</div>
+          <span class="strategy-tag">Singability — 4-line ST restored to 4 lines in TT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="critique-card">
+      <div class="critique-card-header">Final Chorus</div>
+      <div class="critique-card-body">
+        <div class="line-pair">
+          <div class="line-ko">모든 게 자릴 찾아서 돌아오고</div>
+          <div class="line-en">TT: "Everything finds its place and returns"</div>
+          <div class="line-revised">✦ Revised: "Everything falls back into place"</div>
+          <span class="strategy-tag">Modulation — more natural in English, retains rhythm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:white; border-radius:6px; padding:2rem 2.5rem; box-shadow:0 2px 10px rgba(0,0,0,0.07); max-width:720px; margin-top:2rem;">
+    <h4 style="font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:1rem;">Closing Statement</h4>
+    <p style="font-size:0.88rem; line-height:2; color:#3a3a3a; margin-bottom:0.8rem;"><strong>Strengths of the existing TT:</strong> Natural equivalence, modulation, and transposition are used effectively throughout. The translation reads fluently in English.</p>
+    <p style="font-size:0.88rem; line-height:2; color:#3a3a3a; margin-bottom:0.8rem;"><strong>Weaknesses:</strong> The Korean 해체 (informal speech) creates an intimate, muted, monologue-like quality that is partially lost when converted into English declarative sentences. The ST's distinctive lingering resonance (여운) is somewhat diminished.</p>
+    <p style="font-size:0.88rem; line-height:2; color:#3a3a3a;"><strong>What I learned:</strong> Through this analysis, I came to appreciate the importance of dynamic equivalence more deeply — not just matching words, but matching emotional responses. The strategies of modulation and transposition must serve the emotional register of the ST, not merely its literal meaning.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Hyeyeon Kim (김혜연) · KORE 440-001 · Spring 2026 · Dr. Jihye Moon</p>
+  <p style="margin-top:0.5rem;">Final Translation Portfolio · Submitted <span>May 10, 2026</span></p>
+</footer>
+
+</body>
+</html>
